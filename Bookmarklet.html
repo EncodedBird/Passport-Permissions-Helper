@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link and Instructions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-section {
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .instructions-section {
+            padding: 20px;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        a.button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        a.button:hover {
+            background-color: #2980b9;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="link-section">
+            <h2>Important Link</h2>
+            <p>Bookmark the button below to get the script</p>
+            <a href="javascript:(function()%7Bfunction%20autoCheckBoxes(permissionList)%20%7B%0A%20%20const%20permissionSet%20%3D%20new%20Set(permissionList)%3B%0A%20%20const%20labels%20%3D%20document.getElementsByTagName('label')%3B%0A%0A%20%20for%20(let%20label%20of%20labels)%20%7B%0A%20%20%20%20if%20(permissionSet.has(label.textContent.trim()))%20%7B%0A%20%20%20%20%20%20let%20checkbox%20%3D%20null%3B%0A%20%20%20%20%20%20checkbox%20%3D%20label.querySelector('input%5Btype%3D%22checkbox%22%5D')%3B%0A%20%20%20%20%20%20if%20(!checkbox%20%26%26%20label.htmlFor)%20%7B%0A%20%20%20%20%20%20%20%20checkbox%20%3D%20document.getElementById(label.htmlFor)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20if%20(!checkbox)%20%7B%0A%20%20%20%20%20%20%20%20checkbox%20%3D%20label.nextElementSibling%3B%0A%20%20%20%20%20%20%20%20if%20(checkbox%20%26%26%20checkbox.type%20!%3D%3D%20'checkbox')%20%7B%0A%20%20%20%20%20%20%20%20%20%20checkbox%20%3D%20null%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20if%20(checkbox%20%26%26%20checkbox.type%20%3D%3D%3D%20'checkbox')%20%7B%0A%20%20%20%20%20%20%20%20checkbox.checked%20%3D%20true%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Aconst%20userProvidedPermissions%20%3D%20%60%0AAddPlayerAccountPermission%0AAddPlayerAddressPermission%0AAddPlayerCardPermission%0AAddPlayerDataPermission%0AAddPlayerEmailPermission%0AAddPlayerExternalIDPermission%0AAddPlayerImagePermission%0AAddPlayerInterestPermission%0AAddPlayerMarketingCouponsRedemptionPermission%0AAddPlayerMemoPermission%0AAddPlayerMessagePermission%0AAddPlayerPermission%0AAddPlayerPersonalIDPermission%0AAddPlayerPhonePermission%0AAddPlayerPinPermission%0AAddPlayerTrackingPermission%0AAddPlayerTransactionPermission%0AAddPlayTransactionPermission%0AAddRedemptionPermission%0AGetAccountTypeTransactionTypePermission%0AGetAddressTypesPermission%0AGetBonusTypesPermission%0AGetClientTypeByIdPermission%0AGetClientTypesPermission%0AGetContactTypesPermission%0AGetCountriesPermission%0AGetMarketingCouponsByCouponIdPermission%0AGetMarketingCouponsPermission%0AGetMarketingItemTypesPermission%0AGetMarketingOffersByIdPermission%0AGetMarketingOffersPermission%0AGetPlayerAccountBalanceByAccountIdPermission%0AGetPlayerAccountBalanceByAccountTypeIdPermission%0AGetPlayerAccountBalancePermission%0AGetPlayerAddressPermission%0AGetPlayerAttributesByIdPermission%0AGetPlayerAttributesPermission%0AGetPlayerBonusInfoPermission%0AGetPlayerByIdPermission%0AGetPlayerByMergedSinceDatePermission%0AGetPlayerByPlayerCardNumberPermission%0AGetPlayerCardPermission%0AGetPlayerDataPermission%0AGetPlayerEmailPermission%0AGetPlayerExternalIdIdentifierPermission%0AGetPlayerExternalIdPermission%0AGetPlayerGroupsPermission%0AGetPlayerImagePermission%0AGetPlayerInboxByMessageCategoryPermission%0AGetPlayerInboxByMessageIdPermission%0AGetPlayerInboxPermission%0AGetPlayerInterestsBytagIdPermission%0AGetPlayerInterestsPermission%0AGetPlayerKeyPairPermission%0AGetPlayerLinkPermission%0AGetPlayerLinkTypesPermission%0AGetPlayerListPermission%0AGetPlayerMarketingCouponsPermission%0AGetPlayerMarketingOffersPermission%0AGetPlayerMemoByMemoIdPermission%0AGetPlayerMemoByMemoTypePermission%0AGetPlayerMemoPermission%0AGetPlayerMsgQueueByIdPermission%0AGetPlayerMsgQueuePermission%0AGetPlayerPermission%0AGetPlayerPersonalIdByIDPermission%0AGetPlayerPersonalIDPermission%0AGetPlayerPhoneByPhoneIdPermission%0AGetPlayerPhonePermission%0AGetPlayerRankPermission%0AGetPlayerRewardsPermission%0AGetPlayerStatisticsPermission%0AGetPlayerStopPermission%0AGetPlayerTitlePermission%0AGetPlayerTrackingByTrackingIdPermission%0AGetPlayerTrackingPermission%0AGetPrizeTypesPermission%0AGetPropertyAccountsPermission%0AGetPropertyAddressPermission%0AGetPropertyAttributesPermission%0AGetPropertyClubRanksByIdPermission%0AGetPropertyClubRanksPermission%0AGetPropertyClubsPermission%0AGetPropertyComplimentaryItemsByItemIdPermission%0AGetPropertyDepartmentsPermission%0AGetPropertyEmployeesPermission%0AGetPropertyExternalIDTypesPermission%0AGetPropertyGroupPermission%0AGetPropertyIdentificationTypesPermission%0AGetPropertyLocationsPermission%0AGetPropertyProfilePermission%0AGetPropertyRedemptionTypesPermission%0AGetPropertyShiftsPermission%0AGetPropertyStatTypebyTypePermission%0AGetPropertyStatTypesPermission%0AGetPropertyTransactionLimitsPermission%0AGetRedemptionPermission%0AGetStatesPermission%0AGetTransactionByExternalTransactionIdPermission%0AGetTransactionByTransactionIdPermission%0AGetTransactionPerAccountPerPlayerPermission%0AGetTransactionPerPlayerPermission%0AGetTransactionTypesPermission%0AUpdatePlayerAccountPermission%0AUpdatePlayerAddressPermission%0AUpdatePlayerAttributePermission%0AUpdatePlayerCardPermission%0AUpdatePlayerDataPermission%0AUpdatePlayerEmailPermission%0AUpdatePlayerExternalIdPermission%0AUpdatePlayerGroupPermission%0AUpdatePlayerImagePermission%0AUpdatePlayerMarketingCouponsPermission%0AUpdatePlayerMemoPermission%0AUpdatePlayerMessagePermission%0AUpdatePlayerMsgQueuePermission%0AUpdatePlayerPersonalIDPermission%0AUpdatePlayerPhonePermission%0AUpdatePlayerPinPermission%0AUpdatePlayerProfilePermission%0AUpdatePlayerRankPermission%0AUpdatePropertySettingPermission%0AUpdateRedemptionPermission%0AValidatePlayerInfoPermission%0A%60.trim().split('%5Cn')%3B%0A%0AautoCheckBoxes(userProvidedPermissions)%3B%7D)()%3B" class="button">Passport Permissions Helper for nConnect</a>
+        </div>
+        
+        <div class="instructions-section">
+            <h1>Instructions</h1>
+            <p>Follow these steps to complete the process:</p>
+            
+            <ul>
+              <li>First, right click the link.</li>
+              <li>Next, select bookmark link.</li>
+              <li>Next, you have to go to the relevant nconnect portal where you are setting permissions. For example (where the root url is site-specific): https://nconnect.ppi.local:50143/ATI.IdentityServer/Admin/User/Roles?username=passport</li>
+              <li>Finally, when there press the bookmark you just made and it will check the correct checkboxes for you!</li>
+            </ul>
+            
+            <p><strong>Note:</strong> If you encounter issues, this was only tested against OASIS 12.11.6000. However you can email me back.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+function autoCheckBoxes(permissionList) {
+  const permissionSet = new Set(permissionList);
+  const labels = document.getElementsByTagName('label');
+
+  for (let label of labels) {
+    if (permissionSet.has(label.textContent.trim())) {
+      let checkbox = null;
+      checkbox = label.querySelector('input[type="checkbox"]');
+      if (!checkbox && label.htmlFor) {
+        checkbox = document.getElementById(label.htmlFor);
+      }
+      if (!checkbox) {
+        checkbox = label.nextElementSibling;
+        if (checkbox && checkbox.type !== 'checkbox') {
+          checkbox = null;
+        }
+      }
+      if (checkbox && checkbox.type === 'checkbox') {
+        checkbox.checked = true;
+      }
+    }
+  }
+}
+
+const userProvidedPermissions = `
+AddPlayerAccountPermission
+AddPlayerAddressPermission
+AddPlayerCardPermission
+AddPlayerDataPermission
+AddPlayerEmailPermission
+AddPlayerExternalIDPermission
+AddPlayerImagePermission
+AddPlayerInterestPermission
+AddPlayerMarketingCouponsRedemptionPermission
+AddPlayerMemoPermission
+AddPlayerMessagePermission
+AddPlayerPermission
+AddPlayerPersonalIDPermission
+AddPlayerPhonePermission
+AddPlayerPinPermission
+AddPlayerTrackingPermission
+AddPlayerTransactionPermission
+AddPlayTransactionPermission
+AddRedemptionPermission
+GetAccountTypeTransactionTypePermission
+GetAddressTypesPermission
+GetBonusTypesPermission
+GetClientTypeByIdPermission
+GetClientTypesPermission
+GetContactTypesPermission
+GetCountriesPermission
+GetMarketingCouponsByCouponIdPermission
+GetMarketingCouponsPermission
+GetMarketingItemTypesPermission
+GetMarketingOffersByIdPermission
+GetMarketingOffersPermission
+GetPlayerAccountBalanceByAccountIdPermission
+GetPlayerAccountBalanceByAccountTypeIdPermission
+GetPlayerAccountBalancePermission
+GetPlayerAddressPermission
+GetPlayerAttributesByIdPermission
+GetPlayerAttributesPermission
+GetPlayerBonusInfoPermission
+GetPlayerByIdPermission
+GetPlayerByMergedSinceDatePermission
+GetPlayerByPlayerCardNumberPermission
+GetPlayerCardPermission
+GetPlayerDataPermission
+GetPlayerEmailPermission
+GetPlayerExternalIdIdentifierPermission
+GetPlayerExternalIdPermission
+GetPlayerGroupsPermission
+GetPlayerImagePermission
+GetPlayerInboxByMessageCategoryPermission
+GetPlayerInboxByMessageIdPermission
+GetPlayerInboxPermission
+GetPlayerInterestsBytagIdPermission
+GetPlayerInterestsPermission
+GetPlayerKeyPairPermission
+GetPlayerLinkPermission
+GetPlayerLinkTypesPermission
+GetPlayerListPermission
+GetPlayerMarketingCouponsPermission
+GetPlayerMarketingOffersPermission
+GetPlayerMemoByMemoIdPermission
+GetPlayerMemoByMemoTypePermission
+GetPlayerMemoPermission
+GetPlayerMsgQueueByIdPermission
+GetPlayerMsgQueuePermission
+GetPlayerPermission
+GetPlayerPersonalIdByIDPermission
+GetPlayerPersonalIDPermission
+GetPlayerPhoneByPhoneIdPermission
+GetPlayerPhonePermission
+GetPlayerRankPermission
+GetPlayerRewardsPermission
+GetPlayerStatisticsPermission
+GetPlayerStopPermission
+GetPlayerTitlePermission
+GetPlayerTrackingByTrackingIdPermission
+GetPlayerTrackingPermission
+GetPrizeTypesPermission
+GetPropertyAccountsPermission
+GetPropertyAddressPermission
+GetPropertyAttributesPermission
+GetPropertyClubRanksByIdPermission
+GetPropertyClubRanksPermission
+GetPropertyClubsPermission
+GetPropertyComplimentaryItemsByItemIdPermission
+GetPropertyDepartmentsPermission
+GetPropertyEmployeesPermission
+GetPropertyExternalIDTypesPermission
+GetPropertyGroupPermission
+GetPropertyIdentificationTypesPermission
+GetPropertyLocationsPermission
+GetPropertyProfilePermission
+GetPropertyRedemptionTypesPermission
+GetPropertyShiftsPermission
+GetPropertyStatTypebyTypePermission
+GetPropertyStatTypesPermission
+GetPropertyTransactionLimitsPermission
+GetRedemptionPermission
+GetStatesPermission
+GetTransactionByExternalTransactionIdPermission
+GetTransactionByTransactionIdPermission
+GetTransactionPerAccountPerPlayerPermission
+GetTransactionPerPlayerPermission
+GetTransactionTypesPermission
+UpdatePlayerAccountPermission
+UpdatePlayerAddressPermission
+UpdatePlayerAttributePermission
+UpdatePlayerCardPermission
+UpdatePlayerDataPermission
+UpdatePlayerEmailPermission
+UpdatePlayerExternalIdPermission
+UpdatePlayerGroupPermission
+UpdatePlayerImagePermission
+UpdatePlayerMarketingCouponsPermission
+UpdatePlayerMemoPermission
+UpdatePlayerMessagePermission
+UpdatePlayerMsgQueuePermission
+UpdatePlayerPersonalIDPermission
+UpdatePlayerPhonePermission
+UpdatePlayerPinPermission
+UpdatePlayerProfilePermission
+UpdatePlayerRankPermission
+UpdatePropertySettingPermission
+UpdateRedemptionPermission
+ValidatePlayerInfoPermission
+`.trim().split('\n');
+
+autoCheckBoxes(userProvidedPermissions);
